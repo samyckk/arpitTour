@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <title>Go Trip</title>
+</head>
+<body>
+
+<section class="nav-bar">
+  <div class="logo">Go Trip</div>
+  <ul class="menu">
+    <li><a href="#">home</a></li>
+    <li><a href="#places">package</a></li>
+    <li><a href="#about">about us</a></li>
+    <li><a href="#footer">contact us</a></li>
+    <li><a href="loginForm.html">Login/Signup</a></li>
+    <li class="currency-exchange">
+      <a href="#" onclick="openCurrencyExchange()">Currency Exchange</a>
+    </li>
+  </ul>
+</section>
+
+<section class="banner">
+  <div class="banner-text-item">
+    <div class="banner-heading">
+      <h1>Find your Next tour!</h1>
+    </div>
+    <form class="form" id="searchForm">
+      <input type="text" id="searchInput" list="mylist" placeholder="Where would you like to go?">
+      <datalist id="mylist">
+        <option>Vancouver, Canada</option>
+        <option>Paris, France</option>
+        <option>Monaco, Monaco</option>
+        <option>Bern, Switzerland</option>
+        <option>Seoul, South Korea</option>
+        <option>Tokyo, Japan</option>
+      </datalist>
+      <input type="date" class="date">
+      <button type="button" onclick="searchGoogle()" class="book">Search</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  function searchGoogle() {
+    const searchInput = document.getElementById("searchInput").value;
+    if (searchInput.trim() !== "") {
+      const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchInput)}`;
+      window.open(searchUrl, "_blank");
+    }
+  }
+
+  function openCurrencyExchange() {
+    // This opens a search for "currency exchange rate" on Google
+    window.open("https://www.google.com/search?q=currency+exchange+rate", "_blank");
+
+    // Uncomment the line below to open a specific currency exchange website
+    // window.open("https://www.xe.com/currencyconverter/", "_blank");
+  }
+</script>
+
+</body>
+
+    <!--=========Services===============-->
+    <section class="services">
+      <div class="service-item">
+        <img src="https://static.vecteezy.com/system/resources/previews/014/531/553/original/travel-guide-and-tour-with-showing-interesting-places-to-group-of-tourist-for-planning-vacation-in-flat-cartoon-hand-drawn-templates-illustration-vector.jpg">
+        <h2>1500+ Our Local Guides</h2>
+      </div>
+      <div class="service-item">
+        <img src="https://media.istockphoto.com/id/1369536972/vector/business-travel-concept-vector-flat-people-illustration-male-businessman-executive-in-suit.jpg?s=612x612&w=0&k=20&c=ywxJPeaIHbvrpcJEZUDtW-HtZVmG4tHq-TfIemIZxnw=">
+        <h2>100% Trusted Tour Agency</h2>
+      </div>
+      <div class="service-item">
+        <img src="https://img.freepik.com/free-vector/28th-years-anniversary-celebration-design_460848-11524.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1712793600&semt=ais">
+        <h2>28+ Years of Travel Experience</h2>
+      </div>
+      <div class="service-item">
+        <img src="https://img.freepik.com/free-vector/flat-tourists-ready-holiday_23-2149059981.jpg">
+        <h2>98% Our Travelers are Happy</h2>
+      </div>
+    </section>
+    <!--==============Places===================-->
+    <section id="places" class="places">
+      <div class="places-text">
+        <small>FEATURED TOURS PACKAGES</small>
+        <h2>Favourite Places</h2>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+            <a href="vancouver.html">
+              <div class="zoom-img">
+                <div class="img-card">
+                  <img src="https://cdn-v2.theculturetrip.com/1200x630/wp-content/uploads/2017/03/15175168444_84c45f2306_b.webp">
+                </div>
+              </div>
+        
+              <div class="text">
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+                <h2>Vancouver Vista Escape</h2>
+                <p class="cost">$1870 / Per Person</p>
+                <div class="card-box">
+                  <p class="time">🕓 5 Days</p>
+                  <p class="location"><b>✈ Vancouver, Canada</b></p>
+                </div>
+              </div>
+            </a>
+          </div>
+        <div class="card">
+            <a href="paris.html">
+          <div class="zoom-img">
+            <div class="img-card">
+              <img src="https://www.thetrainline.com/cms/media/1360/france-eiffel-tower-paris.jpg?mode=crop&width=660&height=440&quality=70">
+            </div>
+          </div>
+
+          <div class="text">
+            <span class="rating">⭐⭐⭐⭐⭐</span>
+            <h2>Timeless Paris</h2>
+            <p class="cost">$2370 / Per Person</p>
+            <div class="card-box">
+              <p class="time">🕓 4 Days</p>
+              <p class="location"><b>✈ Paris, France</b></p>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="card">
+            <a href="monaco.html">
+          <div class="zoom-img">
+            <div class="img-card">
+              <img src="https://media.istockphoto.com/id/177779735/photo/principaute-of-monaco-and-monte-carlo.jpg?s=612x612&w=0&k=20&c=w77160NBHz-Zo2b0pit4kcX3sc_bChgoAH1WEehvxSw=">
+            </div>
+          </div>
+
+          <div class="text">
+            <span class="rating">⭐⭐⭐⭐⭐</span>
+            <h2>Monaco by Moonlight</h2>
+            <p class="cost">$3250 / Per Person</p>
+            <div class="card-box">
+              <p class="time">🕓 5 Days</p>
+              <p class="location"><b>✈ Monaco, Monaco</b></p>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="card">
+         <a href="bern.html">
+            <div class="zoom-img">
+            <div class="img-card">
+              <img src="https://www.shutterstock.com/image-photo/bern-switzerland-view-old-city-600nw-704449411.jpg">
+            </div>
+          </div>
+
+          <div class="text">
+            <span class="rating">⭐⭐⭐⭐⭐</span>
+            <h2>Bern Panorama</h2>
+            <p class="cost">$6500 / Per Person</p>
+            <div class="card-box">
+              <p class="time">🕓 6 Days</p>
+              <p class="location"><b>✈ Bern, Switzerland</b></p>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="card">
+            <a href="seoul.html">
+          <div class="zoom-img">
+            <div class="img-card">
+              <img src="https://media.cntraveler.com/photos/5d72b0ef7ffc50000818c6c7/16:9/w_2560%2Cc_limit/Seoul%2C-Korea_GettyImages-560065591.jpg">
+            </div>
+          </div>
+
+          <div class="text">
+            <span class="rating">⭐⭐⭐⭐⭐</span>
+            <h2>Seoul Sparkle</h2>
+            <p class="cost">$4200 / Per Person</p>
+            <div class="card-box">
+              <p class="time">🕓 3 Days</p>
+              <p class="location"><b>✈ Seoul, South Korea</b></p>
+            </div>
+          </div>
+        </a>
+
+        </div>
+        <div class="card">
+            <a href="tokyo.html">
+          <div class="zoom-img">
+            <div class="img-card">
+              <img src="https://media.cntraveler.com/photos/60341fbad7bd3b27823c9db2/16:9/w_2560%2Cc_limit/Tokyo-2021-GettyImages-1208124099.jpg">
+            </div>
+          </div>
+
+          <div class="text">
+            <span class="rating">⭐⭐⭐⭐⭐</span>
+            <h2>Taste of Tokyo</h2>
+            <p class="cost">$3700 / Per Person</p>
+            <div class="card-box">
+              <p class="time">🕓 3 Days</p>
+              <p class="location"><b>✈ Tokyo, Japan</b></p>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--===========About Us===============-->
+    <section id="about" class="about">
+      <div class="about-img">
+        <img src="https://media.istockphoto.com/id/1096035138/photo/beautiful-young-couple-relaxing-after-hiking-and-taking-a-break.jpg?s=612x612&w=0&k=20&c=iwNan7K7gbiIl2unv-9EuE5Yej-h_l1OrLNMel0husU=">
+      </div>
+      <div class="about-text">
+        <small><b>ABOUT OUR COMPANY</b></small>
+        <h2>Welcome to Go Trip </h2>
+        <p>Are you ready to embark on a journey of discovery, adventure, and wonder?
+          Look no further, you've just stepped into the doorway to your dream destinations.
+          Welcome to Wanderlust Adventures, your passport to the world.
+          Your next great adventure is just a click away. Dive into our treasure trove of travel inspiration,
+          discover travel guides, and unlock exclusive deals. Whether you're planning an epic round-the-world trip
+          or a weekend getaway, Wanderlust Adventures is your trusted partner in making your travel dreams come true.
+        </p>
+        <ul>
+          <li>Most Visited Travel Website of 2022</li>
+          <li>Destination Expertise</li>
+          <li>Visa and Documentation Support</li>
+          <li>Travel Insurance</li>
+          <li>Multilingual service</li>
+        </ul>
+      </div>
+    </section>
+
+    <!--===========Footer=================-->
+
+    <div class="footer" id="footer">
+      <div class="links">
+        <div class="contact">
+          <p>
+          <h2>Contact Us : </h2><br>
+          <b> +91 78789 40586/87/88</b></p>
+
+          <p>
+          <h2>Email : </h2><br>
+          <b> headoffice@gotrip.com</b></p>
+        </div>
+
+        <div class="contact">
+          <p>
+          <h2>Fax : </h2><br>
+          <b> +91 78789 40586</b></p>
+
+          <p>
+          <h2>Address : </h2> <br>
+          <b> B-302 Dev Aditya aracade Thaltej, opposite baghban party plot .</b></p>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
+
+

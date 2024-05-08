@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./loginstyles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Login Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login Form</h1>
+      <form action="" method="post" accept-charset="utf-8" id="loginform">
+        <div class="form-control" hidden="True" id="name">
+          <input type="text" required />
+          <label>Name</label>
+        </div>
+        <div class="form-control" hidden="True" id="phone">
+          <input type="tel" required />
+          <label>Phone</label>
+        </div>
+        <div class="form-control">
+          <input type="email" required />
+          <label>Email</label>
+        </div>
+        <div class="form-control">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+        <button type="button" class="btn" id="loginBtn">Login</button>
+        <button type="button" class="btn" id="signupBtn" style="display: none">
+          Signup
+        </button>
+        <p class="text">
+          Don't have an account? <a href="#" id="registerbtn">Register</a>
+        </p>
+      </form>
+    </div>
+    <script src="./loginstyles.js"></script>
+    <script>
+      //DOM
+      const btn = document.getElementById("registerbtn");
+      const loginBtn = document.getElementById("loginBtn");
+      const signupBtn = document.getElementById("signupBtn");
+
+      //OBJECTS
+      const signup = {
+        name: "",
+        phone: "",
+        email: "",
+        password: "",
+      };
+
+      const login = {
+        email: "",
+        password: "",
+      }
+
+      //Functions
+      btn.addEventListener("click", () => {
+        const form = document.getElementById("loginform");
+        const nameInput = document.getElementById("name");
+        const phoneInput = document.getElementById("phone");
+
+        nameInput.hidden = false;
+        phoneInput.hidden = false;
+
+        signupBtn.style.display = "block";
+        loginBtn.style.display = "none";
+      });
+
+      signupBtn.addEventListener("click", async () => {
+        // Get form inputs
+        const nameInput = document.querySelector("#name input");
+        const phoneInput = document.querySelector("#phone input");
+        const emailInput = document.querySelector('input[type="email"]');
+        const passwordInput = document.querySelector('input[type="password"]');
+
+        // Assign values to signup object
+        signup.name = nameInput.value;
+        signup.phone = phoneInput.value;
+        signup.email = emailInput.value;
+        signup.password = passwordInput.value;
+
+        // Log signup object for verification
+        console.log(signup);
+
+        //CALLING API to Signup
+        try {
+          axios.post("http://localhost:8000/signup", signup)
+            .then((response) => {
+              console.log("signup send success");
+
+              //Changing form format to Login
+              signupBtn.style.display = "none";
+              loginBtn.style.display = "block";
+              
+              nameInput.parentNode.style.display = "none";
+              phoneInput.parentNode.style.display = "none";
+              
+
+            })
+            .catch((error) => {
+              console.log("signup error in frontend", error);
+              alert("Please check Format of Form");
+            });
+        } catch (error) {
+          console.log("Cannot publish signup from frontend", error);
+        }
+      });
+
+      
+
+      //Login Call
+      loginBtn.addEventListener("click", () => {
+
+        const emailInput = document.querySelector('input[type="email"]');
+        const passwordInput = document.querySelector('input[type="password"]');
+
+        login.email = emailInput.value;
+        login.password = passwordInput.value;
+
+
+        axios.post("http://localhost:8000/login", login).then(response=>{
+          console.log("login success");
+          console.log(response.data);
+          window.location.href = "index.html";
+
+        }).catch((error) => {
+          // console.log(error.response.data.msg);
+          alert(error.response.data.msg);
+        });
+      });
+    </script>
+  </body>
+</html>

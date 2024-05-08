@@ -1,0 +1,124 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Similar background color as index.css */
+    background-image: url("https://offloadmedia.feverup.com/parissecret.com/wp-content/uploads/2023/06/16120757/COUV-ARTICLES-1920x1080-2023-06-08T171325.416-1024x576.jpg"); /* Replace with your header image */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
+  
+  /* Header Styles */
+  .header {
+
+    text-align: center;
+    color: #fff;
+    padding: 100px 0;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .header p {
+    font-size: 18px;
+  }
+  
+  /* Main Content Styles */
+  .main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    opacity: 0.7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .package-details h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .package-details p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .highlights h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .highlights ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .highlights li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  /* Footer Styles */
+  .footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+  }
+  
+  .footer p {
+    font-size: 14px;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .header {
+      padding: 60px 0;
+    }
+  
+    .header h1 {
+      font-size: 28px;
+    }
+  
+    .header p {
+      font-size: 16px;
+    }
+  
+    .main-content {
+      padding: 20px;
+    }
+  
+    .package-details h2 {
+      font-size: 20px;
+    }
+  
+    .package-details p {
+      font-size: 14px;
+    }
+  
+    .highlights h2 {
+      font-size: 20px;
+    }
+  
+    .highlights ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+  
+    .highlights li {
+      font-size: 14px;
+    }
+  
+    .footer p {
+      font-size: 12px;
+    }
+  }
+  
